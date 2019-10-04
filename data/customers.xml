@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="10" class="java.beans.XMLDecoder">
+ <array class="java.lang.Object" length="6">
+  <void index="0">
+   <object class="com.tavisca.gce.assignment.Customer">
+    <void property="address">
+     <string>Sakorenagar, Pune</string>
+    </void>
+    <void property="contact">
+     <string>8427498783</string>
+    </void>
+    <void property="firstName">
+     <string>Bibek</string>
+    </void>
+    <void property="id">
+     <int>1</int>
+    </void>
+    <void property="lastName">
+     <string>BC</string>
+    </void>
+   </object>
+  </void>
+  <void index="1">
+   <object class="com.tavisca.gce.assignment.Customer">
+    <void property="address">
+     <string>I, Don&apos;t know Nagar</string>
+    </void>
+    <void property="contact">
+     <string>123456789</string>
+    </void>
+    <void property="firstName">
+     <string>Rajat</string>
+    </void>
+    <void property="id">
+     <int>2</int>
+    </void>
+    <void property="lastName">
+     <string>Yadav</string>
+    </void>
+   </object>
+  </void>
+  <void index="2">
+   <object class="com.tavisca.gce.assignment.Customer">
+    <void property="address">
+     <string>Wadgaonsheri, Pune</string>
+    </void>
+    <void property="contact">
+     <string>987654321</string>
+    </void>
+    <void property="firstName">
+     <string>Tushar</string>
+    </void>
+    <void property="id">
+     <int>3</int>
+    </void>
+    <void property="lastName">
+     <string>Jajodia</string>
+    </void>
+   </object>
+  </void>
+  <void index="3">
+   <object class="com.tavisca.gce.assignment.Customer">
+    <void property="address">
+     <string>Somewhere, Pune</string>
+    </void>
+    <void property="contact">
+     <string>1122334455</string>
+    </void>
+    <void property="firstName">
+     <string>Shivam</string>
+    </void>
+    <void property="id">
+     <int>4</int>
+    </void>
+    <void property="lastName">
+     <string>Stuff</string>
+    </void>
+   </object>
+  </void>
+  <void index="4">
+   <object class="com.tavisca.gce.assignment.Customer">
+    <void property="address">
+     <string>Somewhere, Pune</string>
+    </void>
+    <void property="contact">
+     <string>9988776655</string>
+    </void>
+    <void property="firstName">
+     <string>Vikas</string>
+    </void>
+    <void property="id">
+     <int>5</int>
+    </void>
+    <void property="lastName">
+     <string>Stuff</string>
+    </void>
+   </object>
+  </void>
+  <void index="5">
+   <object class="com.tavisca.gce.assignment.Customer">
+    <void property="address">
+     <string>Nowhere, Stuff</string>
+    </void>
+    <void property="contact">
+     <string>6767676767</string>
+    </void>
+    <void property="firstName">
+     <string>Squlin</string>
+    </void>
+    <void property="id">
+     <int>6</int>
+    </void>
+    <void property="lastName">
+     <string>Kadari</string>
+    </void>
+   </object>
+  </void>
+ </array>
+</java>
