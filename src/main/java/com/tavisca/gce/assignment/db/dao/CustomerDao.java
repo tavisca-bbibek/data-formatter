@@ -8,8 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CustomerDao implements Dao {
-
-
     private Connection connection;
 
     public CustomerDao() throws DataSourceException {
