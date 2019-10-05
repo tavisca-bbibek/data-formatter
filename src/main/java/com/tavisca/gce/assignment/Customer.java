@@ -7,22 +7,22 @@ public final class Customer implements Serializable {
     private  String firstName;
     private  String lastName;
     private  String contact;
-    private  String address;
+    private  String addresses;
 
     public Customer() {
         id = 0;
         firstName = "Undefined";
         lastName = "Undefined";
         contact = "Undefined";
-        address = "Undefined";
+        addresses = "Undefined";
     }
 
-    public Customer(int id, String firstName, String lastName, String contact, String address) {
+    public Customer(int id, String firstName, String lastName, String contact, String addresses) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.contact = contact;
-        this.address = address;
+        this.addresses = addresses;
     }
 
     public int getId() {
@@ -41,8 +41,8 @@ public final class Customer implements Serializable {
         return contact;
     }
 
-    public String getAddress() {
-        return address;
+    public String getAddresses() {
+        return addresses;
     }
 
     public void setId(int id) {
@@ -61,8 +61,8 @@ public final class Customer implements Serializable {
         this.contact = contact;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setAddresses(String addresses) {
+        this.addresses = addresses;
     }
 
     @Override
@@ -72,7 +72,7 @@ public final class Customer implements Serializable {
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", contact='" + contact + '\'' +
-                ", address='" + address + '\'' +
+                ", address='" + addresses + '\'' +
                 '}';
     }
 }

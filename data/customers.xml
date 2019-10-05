@@ -1,119 +1,51 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<java version="10" class="java.beans.XMLDecoder">
- <array class="java.lang.Object" length="6">
-  <void index="0">
-   <object class="com.tavisca.gce.assignment.Customer">
-    <void property="address">
-     <string>Sakorenagar, Pune</string>
-    </void>
-    <void property="contact">
-     <string>8427498783</string>
-    </void>
-    <void property="firstName">
-     <string>Bibek</string>
-    </void>
-    <void property="id">
-     <int>1</int>
-    </void>
-    <void property="lastName">
-     <string>BC</string>
-    </void>
-   </object>
-  </void>
-  <void index="1">
-   <object class="com.tavisca.gce.assignment.Customer">
-    <void property="address">
-     <string>I, Don&apos;t know Nagar</string>
-    </void>
-    <void property="contact">
-     <string>123456789</string>
-    </void>
-    <void property="firstName">
-     <string>Rajat</string>
-    </void>
-    <void property="id">
-     <int>2</int>
-    </void>
-    <void property="lastName">
-     <string>Yadav</string>
-    </void>
-   </object>
-  </void>
-  <void index="2">
-   <object class="com.tavisca.gce.assignment.Customer">
-    <void property="address">
-     <string>Wadgaonsheri, Pune</string>
-    </void>
-    <void property="contact">
-     <string>987654321</string>
-    </void>
-    <void property="firstName">
-     <string>Tushar</string>
-    </void>
-    <void property="id">
-     <int>3</int>
-    </void>
-    <void property="lastName">
-     <string>Jajodia</string>
-    </void>
-   </object>
-  </void>
-  <void index="3">
-   <object class="com.tavisca.gce.assignment.Customer">
-    <void property="address">
-     <string>Somewhere, Pune</string>
-    </void>
-    <void property="contact">
-     <string>1122334455</string>
-    </void>
-    <void property="firstName">
-     <string>Shivam</string>
-    </void>
-    <void property="id">
-     <int>4</int>
-    </void>
-    <void property="lastName">
-     <string>Stuff</string>
-    </void>
-   </object>
-  </void>
-  <void index="4">
-   <object class="com.tavisca.gce.assignment.Customer">
-    <void property="address">
-     <string>Somewhere, Pune</string>
-    </void>
-    <void property="contact">
-     <string>9988776655</string>
-    </void>
-    <void property="firstName">
-     <string>Vikas</string>
-    </void>
-    <void property="id">
-     <int>5</int>
-    </void>
-    <void property="lastName">
-     <string>Stuff</string>
-    </void>
-   </object>
-  </void>
-  <void index="5">
-   <object class="com.tavisca.gce.assignment.Customer">
-    <void property="address">
-     <string>Nowhere, Stuff</string>
-    </void>
-    <void property="contact">
-     <string>6767676767</string>
-    </void>
-    <void property="firstName">
-     <string>Squlin</string>
-    </void>
-    <void property="id">
-     <int>6</int>
-    </void>
-    <void property="lastName">
-     <string>Kadari</string>
-    </void>
-   </object>
-  </void>
- </array>
-</java>
+<ArrayList>
+  <item>
+    <id>1</id>
+    <firstName>Bibek</firstName>
+    <lastName>BC</lastName>
+    <contact>8427498783</contact>
+    <addresses>Sakorenagar, Pune</addresses>
+  </item>
+  <item>
+    <id>2</id>
+    <firstName>Rajat</firstName>
+    <lastName>Yadav</lastName>
+    <contact>123456789</contact>
+    <addresses>I, Don't know Nagar</addresses>
+  </item>
+  <item>
+    <id>3</id>
+    <firstName>Tushar</firstName>
+    <lastName>Jajodia</lastName>
+    <contact>987654321</contact>
+    <addresses>Wadgaonsheri, Pune</addresses>
+  </item>
+  <item>
+    <id>4</id>
+    <firstName>Shivam</firstName>
+    <lastName>Stuff</lastName>
+    <contact>1122334455</contact>
+    <addresses>Somewhere, Pune</addresses>
+  </item>
+  <item>
+    <id>5</id>
+    <firstName>Vikas</firstName>
+    <lastName>Stuff</lastName>
+    <contact>9988776655</contact>
+    <addresses>Somewhere, Pune</addresses>
+  </item>
+  <item>
+    <id>6</id>
+    <firstName>Squlin</firstName>
+    <lastName>Kadari</lastName>
+    <contact>6767676767</contact>
+    <addresses>Nowhere, Stuff</addresses>
+  </item>
+  <item>
+    <id>7</id>
+    <firstName>Susu</firstName>
+    <lastName>Stuff</lastName>
+    <contact>1234567890</contact>
+    <addresses>Everywhere, Pune</addresses>
+  </item>
+</ArrayList>

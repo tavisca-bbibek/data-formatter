@@ -17,7 +17,9 @@ public class JsonWriter implements Writer {
 
     public void writeList(List<?> list) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
-        mapper.writeValue(new File(fileName), list);
+        mapper
+                .writerWithDefaultPrettyPrinter()
+                .writeValue(new File(fileName), list);
     }
 
     public String getFileName() {

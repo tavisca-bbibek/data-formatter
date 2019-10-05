@@ -1,10 +1,10 @@
-package com.tavisca.gce.assignment;
+package com.tavisca.gce.assignment.db;
 
 import com.tavisca.gce.assignment.exception.DataSourceException;
 
 import java.util.List;
 
-public interface DataSource {
-    public List<?> findAll();
+public interface Dao {
+    public List<?> findAll() throws DataSourceException;
     public void close() throws DataSourceException;
 }

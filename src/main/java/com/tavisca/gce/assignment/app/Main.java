@@ -1,32 +1,37 @@
 package com.tavisca.gce.assignment.app;
 
-import com.tavisca.gce.assignment.DataSource;
-import com.tavisca.gce.assignment.MysqlDataSource;
+import com.tavisca.gce.assignment.db.Dao;
+import com.tavisca.gce.assignment.db.CustomerDao;
 import com.tavisca.gce.assignment.exception.DataSourceException;
-import com.tavisca.gce.assignment.serializer.CsvWriter;
-import com.tavisca.gce.assignment.serializer.JsonWriter;
-import com.tavisca.gce.assignment.serializer.Writer;
-import com.tavisca.gce.assignment.serializer.XMLWriterJavaSE;
+import com.tavisca.gce.assignment.serializer.*;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
 
 public class Main {
-    public static void main(String[] args) throws IOException {
-        DataSource dataSource;
+    public static void main(String[] args) {
+        Dao dao;
         try {
-            dataSource = new MysqlDataSource();
+            dao = new CustomerDao();
         } catch (DataSourceException e) {
             System.err.println("Error: " + e.getMessage());
             return;
         }
 
-        List<?> allCustomers = dataSource.findAll();
+        List<?> allCustomers = null;
+        try {
+            allCustomers = dao.findAll();
+        } catch (DataSourceException e) {
+            System.out.println("Error: " + e.getMessage());
+            Arrays.stream(e.getSuppressed())
+                    .forEach(message -> System.out.println("Error: " + message + " - " ));
+        }
 
         System.out.println("===========[ Your Data ]==========");
         for (Object customer : allCustomers) {
@@ -54,7 +59,7 @@ public class Main {
         Writer writer = null;
         switch (formatOption) {
             case 1:
-                writer = new XMLWriterJavaSE(destination + "/customers.xml");
+                writer = new XMLWriter(destination + "/customers.xml");
                 break;
             case 2:
                 writer = new JsonWriter(destination + "/customers.json");
@@ -76,7 +81,7 @@ public class Main {
         }
 
         try {
-            dataSource.close();
+            dao.close();
         } catch (DataSourceException e) {
             showError(e);
         }

@@ -1,27 +1,22 @@
-package com.tavisca.gce.assignment;
+package com.tavisca.gce.assignment.db;
 
+import com.tavisca.gce.assignment.Customer;
 import com.tavisca.gce.assignment.exception.DataSourceException;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MysqlDataSource implements DataSource{
-    private static final String connection_URL = "jdbc:mysql://localhost:3306/formatdb";
-    private static final String userName = "root";
-    private static final String password = "root";
+public class CustomerDao implements Dao {
+
 
     private Connection connection;
 
-    public MysqlDataSource() throws DataSourceException {
-        try {
-            connection = DriverManager.getConnection(connection_URL, userName, password);
-        } catch (SQLException e) {
-            throw new DataSourceException("Can't connect to the Mysql server");
-        }
+    public CustomerDao() throws DataSourceException {
+        connection = FormatDB.getInstance().getConnection();
     }
 
-    public List <Customer> findAll() {
+    public List <Customer> findAll() throws DataSourceException {
         final String readAllQuery = "SELECT * FROM customers;";
         List<Customer> idToCustomerMap = new ArrayList<>();
 
@@ -40,7 +35,7 @@ public class MysqlDataSource implements DataSource{
                 idToCustomerMap.add(customer);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+           throw new DataSourceException("invalid result set", e);
         }
 
         return idToCustomerMap;
@@ -50,7 +45,7 @@ public class MysqlDataSource implements DataSource{
         try {
             connection.close();
         } catch (SQLException e) {
-            throw new DataSourceException("Can't close the database connection");
+            throw new DataSourceException("Can't close the database connection", e);
         }
     }
 }
