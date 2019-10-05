@@ -3,6 +3,6 @@ package com.tavisca.gce.assignment.serializer;
 import java.io.IOException;
 import java.util.List;
 
-public interface Writer {
-    public void writeList(List<?> list) throws IOException;
+public interface Writer<T> {
+    public void writeList(List<T> list) throws IOException;
 }
