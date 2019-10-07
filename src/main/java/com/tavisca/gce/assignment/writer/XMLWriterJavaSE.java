@@ -1,4 +1,4 @@
-package com.tavisca.gce.assignment.serializer;
+package com.tavisca.gce.assignment.writer;
 
 import java.beans.XMLEncoder;
 import java.io.IOException;
@@ -7,7 +7,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 
-public class XMLWriterJavaSE implements Writer{
+public class XMLWriterJavaSE<T> implements Writer<T>{
 
     private final String fileName;
 
@@ -16,10 +16,10 @@ public class XMLWriterJavaSE implements Writer{
     }
 
     @Override
-    public void writeList(List<?> list) throws IOException {
+    public void write(T[] elements) throws IOException {
         Path filePath = Paths.get(fileName);
         XMLEncoder encoder = new XMLEncoder(Files.newOutputStream(filePath));
-        encoder.writeObject(list.toArray());
+        encoder.writeObject(elements);
         encoder.flush();
         encoder.close();
     }

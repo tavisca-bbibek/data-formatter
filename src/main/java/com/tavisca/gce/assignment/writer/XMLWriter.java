@@ -1,13 +1,13 @@
-package com.tavisca.gce.assignment.serializer;
+package com.tavisca.gce.assignment.writer;
 
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
-import com.tavisca.gce.assignment.Customer;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 
-public class XMLWriter implements Writer {
+public class XMLWriter<T> implements Writer<T> {
 
     private final String fileName;
 
@@ -15,11 +15,19 @@ public class XMLWriter implements Writer {
         this.fileName = fileName;
     }
 
-    public void writeList(List<?> list) throws IOException {
+    public void write(T[] elements) throws IOException {
         XmlMapper mapper = new XmlMapper();
-        mapper
-                .writerWithDefaultPrettyPrinter()
-                .writeValue(new File(fileName), list);
+//        mapper
+//                .writerWithDefaultPrettyPrinter()
+//                .writeValue(new File(fileName), elements);
+        String xml="";
+        for(T element : elements){
+            xml += mapper.writerWithDefaultPrettyPrinter()
+                    .writeValueAsString(element);
+        }
+        FileWriter fileWriter = new FileWriter(fileName);
+        fileWriter.write(xml);
+        fileWriter.close();
     }
 
     public String getFileName() {

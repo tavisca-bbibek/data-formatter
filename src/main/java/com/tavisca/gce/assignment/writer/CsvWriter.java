@@ -1,14 +1,13 @@
-package com.tavisca.gce.assignment.serializer;
+package com.tavisca.gce.assignment.writer;
 
 import com.fasterxml.jackson.dataformat.csv.CsvMapper;
 import com.fasterxml.jackson.dataformat.csv.CsvSchema;
-import com.tavisca.gce.assignment.Customer;
+import com.tavisca.gce.assignment.model.Employee;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.List;
 
-public class CsvWriter implements Writer {
+public class CsvWriter<T> implements Writer<T> {
 
     private final String fileName;
 
@@ -17,12 +16,15 @@ public class CsvWriter implements Writer {
     }
 
     @Override
-    public void writeList(List<?> list) throws IOException {
+    public void write(T[] elements) throws IOException {
+        if (elements == null || elements.length == 0)
+            return;
+
         CsvMapper csvMapper = new CsvMapper();
-        CsvSchema schema = csvMapper.schemaFor(Customer.class);
+        CsvSchema schema = csvMapper.schemaFor(elements[0].getClass());
         csvMapper
                 .writer(schema)
-                .writeValue(new File(fileName), list);
+                .writeValue(new File(fileName), elements);
     }
 
     public String getFileName() {

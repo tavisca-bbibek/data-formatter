@@ -1,8 +1,8 @@
-package com.tavisca.gce.assignment.serializer;
+package com.tavisca.gce.assignment.writer;
 
 import java.io.IOException;
 import java.util.List;
 
 public interface Writer<T> {
-    public void writeList(List<T> list) throws IOException;
+    void write(T[] list) throws IOException;
 }

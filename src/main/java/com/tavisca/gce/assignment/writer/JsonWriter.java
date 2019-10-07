@@ -1,13 +1,12 @@
-package com.tavisca.gce.assignment.serializer;
+package com.tavisca.gce.assignment.writer;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.tavisca.gce.assignment.Customer;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
-public class JsonWriter implements Writer {
+public class JsonWriter<T> implements Writer<T> {
 
     private final String fileName;
 
@@ -15,11 +14,11 @@ public class JsonWriter implements Writer {
         this.fileName = fileName;
     }
 
-    public void writeList(List<?> list) throws IOException {
+    public void write(T[] elements) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
         mapper
                 .writerWithDefaultPrettyPrinter()
-                .writeValue(new File(fileName), list);
+                .writeValue(new File(fileName), elements);
     }
 
     public String getFileName() {

@@ -1,4 +1,4 @@
-package com.tavisca.gce.assignment;
+package com.tavisca.gce.assignment.model;
 
 import java.io.Serializable;
 

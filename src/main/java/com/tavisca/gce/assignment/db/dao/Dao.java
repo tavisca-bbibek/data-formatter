@@ -1,10 +1,17 @@
-package com.tavisca.gce.assignment.db;
-
-import com.tavisca.gce.assignment.exception.DataSourceException;
-
+package com.tavisca.gce.assignment.db.dao;
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.List;
 
-public interface Dao<T> {
-    public List<T> findAll() throws DataSourceException;
-    public void close() throws DataSourceException;
+public abstract class Dao<T> {
+
+    protected Connection connection;
+
+    public Dao(Connection connection) {
+        this.connection = connection;
+    }
+
+    public abstract List<T> findAll() throws SQLException;
+
+    public abstract T findById(int id) throws SQLException;
 }
