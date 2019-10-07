@@ -1,10 +1,12 @@
 package com.tavisca.gce.assignment.model;
 
+import com.fasterxml.jackson.annotation.JsonUnwrapped;
+
 import java.util.Arrays;
 
 public class Employee {
     private int empId;
-    private String name;
+    private String name; //
     private String[] hobbies;
     private Department department;
 
