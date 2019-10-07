@@ -6,16 +6,16 @@ public class Employee {
     private int empId;
     private String name;
     private String[] hobbies;
-    private String department;
+    private Department department;
 
     public Employee() {
         this.empId = 0;
         this.name = "Undefined";
         this.hobbies = new String[]{"Undefined"};
-        this.department = "Undefined";
+        this.department = new Department();
     }
 
-    public Employee(int empId, String name, String[] hobbies, String department) {
+    public Employee(int empId, String name, String[] hobbies, Department department) {
         this.empId = empId;
         this.name = name;
         this.hobbies = hobbies;
@@ -46,11 +46,11 @@ public class Employee {
         this.hobbies = hobbies;
     }
 
-    public String getDepartment() {
+    public Department getDepartment() {
         return department;
     }
 
-    public void setDepartment(String department) {
+    public void setDepartment(Department department) {
         this.department = department;
     }
 

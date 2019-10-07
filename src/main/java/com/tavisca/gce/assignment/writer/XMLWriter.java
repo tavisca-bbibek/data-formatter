@@ -17,17 +17,9 @@ public class XMLWriter<T> implements Writer<T> {
 
     public void write(T[] elements) throws IOException {
         XmlMapper mapper = new XmlMapper();
-//        mapper
-//                .writerWithDefaultPrettyPrinter()
-//                .writeValue(new File(fileName), elements);
-        String xml="";
-        for(T element : elements){
-            xml += mapper.writerWithDefaultPrettyPrinter()
-                    .writeValueAsString(element);
-        }
-        FileWriter fileWriter = new FileWriter(fileName);
-        fileWriter.write(xml);
-        fileWriter.close();
+        mapper
+                .writerWithDefaultPrettyPrinter()
+                .writeValue(new File(fileName), elements);
     }
 
     public String getFileName() {
